@@ -460,6 +460,25 @@
       integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+      const navbarItem3 = document.querySelector(".nav-item ");
+      const randomNumber = () => Math.round(Math.random() * 255);
+      const randomColor = () =>
+        `rgb(${randomNumber()}, ${randomNumber()}, ${randomNumber()})`;
+      console.log(randomColor());
+      navbarItem3.addEventListener("click", (e) => {
+        e.stopPropagation();
+        navbarItem3.style.backgroundColor = randomColor();
+      });
+      navbarItem3.parentElement.addEventListener("click", () => {
+        navbarItem3.parentElement.style.backgroundColor = randomColor();
+      });
+      navbarItem3.parentElement.parentElement.addEventListener("click", () => {
+        navbarItem3.parentElement.parentElement.style.backgroundColor =
+          randomColor();
+      });
+    </script>
     <script src="./lib/fslightbox-basic-3.3.1/fslightbox.js"></script>
   </body>
 </html>
